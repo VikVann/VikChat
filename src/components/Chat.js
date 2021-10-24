@@ -11,8 +11,8 @@ const Chat = () => {
 
     const [value, setValue] = useState('')
 
-    const [messages, loading] = useCollectionData(
-        firestore.collection('messages').orderBy('createdAt')
+    const [messages, loading, error] = useCollectionData(
+        firestore.collection('messages')
     )
 
     const sendMessage = async () => {
@@ -36,12 +36,18 @@ const Chat = () => {
                   style={{height: window.innerHeight - 50, marginTop: 20}}>
                 <div style={{width:'800%', height: '60vh', border: '1px solid gray', overflowY: 'auto'}}>
                     {messages.map(message =>
-                        <div>
+                        <div style={{
+                            margin: 10,
+                            border: user.uid === message.uid ? '1px solid green' : '2px dashed red',
+                            marginLeft: user.uid === message.uid ? 'auto' : '10px',
+                            width: 'fit-content',
+                            padding: 5
+                        }}>
                             <Grid container>
                                 <Avatar src={message.photoURL} />
                                 <div>{message.displayName}</div>
-                                <div>{message.text}</div>
                             </Grid>
+                            <div>{message.text}</div>
                         </div>
                     )}
                 </div>
