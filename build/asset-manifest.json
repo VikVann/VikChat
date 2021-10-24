@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/VikChat/static/css/main.6a3a8768.chunk.css",
+    "main.js": "/VikChat/static/js/main.5ab516ad.chunk.js",
+    "main.js.map": "/VikChat/static/js/main.5ab516ad.chunk.js.map",
+    "runtime-main.js": "/VikChat/static/js/runtime-main.fc9c5974.js",
+    "runtime-main.js.map": "/VikChat/static/js/runtime-main.fc9c5974.js.map",
+    "static/js/2.d0729a9d.chunk.js": "/VikChat/static/js/2.d0729a9d.chunk.js",
+    "static/js/2.d0729a9d.chunk.js.map": "/VikChat/static/js/2.d0729a9d.chunk.js.map",
+    "index.html": "/VikChat/index.html",
+    "static/css/main.6a3a8768.chunk.css.map": "/VikChat/static/css/main.6a3a8768.chunk.css.map",
+    "static/js/2.d0729a9d.chunk.js.LICENSE.txt": "/VikChat/static/js/2.d0729a9d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc9c5974.js",
+    "static/js/2.d0729a9d.chunk.js",
+    "static/css/main.6a3a8768.chunk.css",
+    "static/js/main.5ab516ad.chunk.js"
+  ]
+}
