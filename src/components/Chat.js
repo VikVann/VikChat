@@ -4,6 +4,7 @@ import {useAuthState} from "react-firebase-hooks/auth";
 import {Avatar, Button, Container, Grid, TextField} from "@mui/material";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import Loader from "./Loader";
+import firebase from "firebase";
 
 const Chat = () => {
     const {auth, firestore} = useContext(Context)
@@ -12,7 +13,7 @@ const Chat = () => {
     const [value, setValue] = useState('')
 
     const [messages, loading, error] = useCollectionData(
-        firestore.collection('messages')
+        firestore.collection('messages').orderBy('createdAt')
     )
 
     const sendMessage = async () => {
@@ -20,7 +21,8 @@ const Chat = () => {
             uid: user.uid,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            text: value
+            text: value,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
         })
         setValue('')
     }
